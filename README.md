@@ -1,81 +1,98 @@
-# Validate YouTube URLs
+Validate YouTube URLs
+This project provides an endpoint in Laravel to validate YouTube links.
 
-Este proyecto proporciona un endpoint en Laravel para validar enlaces de YouTube.
+📌 Requirements
 
-## 📌 Requisitos
-- PHP 8+
-- Composer
-- Laravel 12
-- Clave de API de YouTube (Google API)
+PHP 8+
+Composer
+Laravel 12
+YouTube API Key (Google API)
+🚀 Installation
 
-## 🚀 Instalación
-1. Clona este repositorio:
-   ```sh
-   git clone https://github.com/JavierTibi/validate_youtube_urls.git
-   ```
-2. Ingresa al directorio del proyecto:
-   ```sh
-   cd validate_youtube_urls
-   ```
-3. Instala las dependencias con Composer:
-   ```sh
-   composer install
-   ```
-4. Copia el archivo de entorno:
-   ```sh
-   cp .env.example .env
-   ```
-5. Configura la clave de API de YouTube en el archivo `.env`:
-   ```env
-   YOUTUBE_API_KEY=tu_api_key_aqui
-   ```
-6. Genera la clave de aplicación:
-   ```sh
-   php artisan key:generate
-   ```
-7. Limpia caché de configuración:
-   ```sh
-   php artisan config:clear
-   php artisan config:cache
-   ```
-8. Inicia el servidor local:
-   ```sh
-   php artisan serve
-   ```
+Clone this repository:
 
-## 📡 Endpoint: Validar enlaces de YouTube
-### `POST /api/validate-youtube-links`
+bash
+Copy
+Edit
+git clone https://github.com/JavierTibi/validate_youtube_urls.git
+Enter the project directory:
 
-#### 📥 **Parámetros** (JSON Body)
-```json
+bash
+Copy
+Edit
+cd validate_youtube_urls
+Install dependencies with Composer:
+
+bash
+Copy
+Edit
+composer install
+Copy the environment file:
+
+bash
+Copy
+Edit
+cp .env.example .env
+Configure the YouTube API key in the .env file:
+
+ini
+Copy
+Edit
+YOUTUBE_API_KEY=your_api_key_here
+Generate the application key:
+
+bash
+Copy
+Edit
+php artisan key:generate
+Clear configuration cache:
+
+bash
+Copy
+Edit
+php artisan config:clear
+php artisan config:cache
+Start the local server:
+
+bash
+Copy
+Edit
+php artisan serve
+📡 Endpoint: Validate YouTube Links
+
+POST /api/validate-youtube-links
+📥 Parameters (JSON Body)
+
+json
+Copy
+Edit
 {
   "links": [
     "https://www.youtube.com/watch?v=abcdefg",
     "https://youtu.be/hijklmn"
   ]
 }
-```
+📤 Responses
 
-#### 📤 **Respuestas**
-✅ **200 OK** (Validación exitosa)
-```json
+✅ 200 OK (Successful validation)
+
+json
+Copy
+Edit
 {
-  "message": "Validación correcta"
+  "message": "Validation successful"
 }
-```
+❌ 400 Bad Request (If any link is invalid)
 
-❌ **400 Bad Request** (Si algún link no es válido)
-```json
+json
+Copy
+Edit
 {
-  "error": "Formato inválido en los links"
+  "error": "Invalid format in the links"
 }
-```
+🛠 Technologies used
 
-## 🛠 Tecnologías usadas
-- Laravel 12
-- PHP 8+
-- Alaouy YouTube API
-
-## 📄 Licencia
-Este proyecto está bajo la licencia MIT.
-
+Laravel 12
+PHP 8+
+Alaouy YouTube API
+📄 License This project is licensed under the MIT License.
